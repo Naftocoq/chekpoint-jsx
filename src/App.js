@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import Cards from "./Cards"
+
+import Me from "./Me.jpg"
 
 function App() {
+  const firstName = "Aymen"
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Cards />
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hello,{" "}
+          <span className={firstName === "Mohamed" ? "case1" : "case2"}>
+            {firstName ? firstName : "there"}
+          </span>
+          !
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        {firstName && (
+          <img
+            src={Me}
+            alt="Me"
+            style={{
+              maxWidth: "450px",
+              marginTop: "5px",
+              marginBottom: "10px",
+            }}
+          />
+        )}
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
